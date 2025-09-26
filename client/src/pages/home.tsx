@@ -33,6 +33,15 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center space-x-4">
+              <Link href="/teachers">
+                <button 
+                  className="inline-flex items-center px-4 py-2 border border-border rounded-md text-sm font-medium text-foreground bg-card hover:bg-accent transition-colors"
+                  data-testid="link-teachers"
+                >
+                  <i className="fas fa-users mr-2"></i>
+                  শিক্ষক ডাটাবেস
+                </button>
+              </Link>
               <Link href="/batch">
                 <button 
                   className="inline-flex items-center px-4 py-2 border border-border rounded-md text-sm font-medium text-foreground bg-card hover:bg-accent transition-colors"
