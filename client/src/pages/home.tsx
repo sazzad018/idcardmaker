@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { Link, useLocation } from "wouter";
 import TeacherForm from "@/components/teacher-form";
 import IdCardPreview from "@/components/id-card-preview";
 import { Teacher } from "@shared/schema";
@@ -32,6 +33,15 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center space-x-4">
+              <Link href="/batch">
+                <button 
+                  className="inline-flex items-center px-4 py-2 border border-border rounded-md text-sm font-medium text-foreground bg-card hover:bg-accent transition-colors"
+                  data-testid="link-batch"
+                >
+                  <i className="fas fa-layer-group mr-2"></i>
+                  ব্যাচ প্রসেসিং
+                </button>
+              </Link>
               <button className="inline-flex items-center px-4 py-2 border border-border rounded-md text-sm font-medium text-foreground bg-card hover:bg-accent transition-colors">
                 <i className="fas fa-history mr-2"></i>
                 ইতিহাস
