@@ -10,11 +10,16 @@ interface IdCardPreviewProps {
   onTemplateChange: (template: string) => void;
 }
 
-const templates = [
+
+const templateDisplayInfo = [
   { id: "classic-blue", name: "ক্লাসিক ব্লু", gradient: "from-blue-600 via-purple-600 to-blue-800" },
+  { id: "modern-gradient", name: "আধুনিক গ্রেডিয়েন্ট", gradient: "from-indigo-600 via-pink-600 to-purple-600" },
   { id: "nature-green", name: "প্রকৃতি সবুজ", gradient: "from-green-600 to-teal-600" },
+  { id: "minimal-white", name: "সাদা মিনিমাল", gradient: "from-gray-800 to-gray-600" },
   { id: "royal-red", name: "রাজকীয় লাল", gradient: "from-red-600 to-pink-600" },
   { id: "deep-blue", name: "গাঢ় নীল", gradient: "from-indigo-600 to-blue-600" },
+  { id: "corporate-gold", name: "কর্পোরেট গোল্ড", gradient: "from-yellow-600 to-orange-600" },
+  { id: "tech-purple", name: "টেক পার্পল", gradient: "from-purple-600 to-violet-600" },
 ];
 
 export default function IdCardPreview({ teacher, template, onTemplateChange }: IdCardPreviewProps) {
@@ -44,7 +49,7 @@ export default function IdCardPreview({ teacher, template, onTemplateChange }: I
     setIsGenerating(false);
   };
 
-  const selectedTemplate = templates.find(t => t.id === template) || templates[0];
+  const selectedTemplate = templateDisplayInfo.find(t => t.id === template) || templateDisplayInfo[0];
 
   return (
     <div className="space-y-6">
@@ -100,8 +105,8 @@ export default function IdCardPreview({ teacher, template, onTemplateChange }: I
       {/* Template Options */}
       <div className="bg-card rounded-lg border border-border shadow-sm p-6">
         <h3 className="text-lg font-semibold text-foreground mb-4">টেমপ্লেট নির্বাচন</h3>
-        <div className="grid grid-cols-2 gap-4">
-          {templates.map((tmpl) => (
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {templateDisplayInfo.map((tmpl) => (
             <div 
               key={tmpl.id}
               className="relative cursor-pointer group"
